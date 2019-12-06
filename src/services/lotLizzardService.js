@@ -2,7 +2,7 @@ import BaseAxiosService  from './baseAxiosService';
 
 class LotLizzardService {
         constructor() {
-        this.httpService = new BaseAxiosService('https://anypoint.mulesoft.com/mocking/api/v1/links/56e3fea0-8f3b-4924-9d63-5bee1c55b7d8/api');
+        this.httpService = new BaseAxiosService('http://sandbox-parking-api.us-e2.cloudhub.io/api');
     }
 
     getParkingLots() {
@@ -12,19 +12,19 @@ class LotLizzardService {
     }
 
     getParkingLot(id){
-        return this.httpService.request('/parking-lots/'+id).then(response => {
+        return this.httpService.request(`/parking-lots/${id}`).then(response => {
             console.log(response);
         })
     }
 
     getParkingSpaces(id){
-        return this.httpService.request('/parking-lots/'+id+"/spaces").then(response => {
+        return this.httpService.request(`/parking-lots/${id}/spaces`).then(response => {
             console.log(response);
         })
     }
 
     getParkingSpace(lot,space){
-        return this.httpService.request('/parking-lots/'+lot+"/spaces/"+space).then(response => {
+        return this.httpService.request(`/parking-lots/${lot}/spaces/${space}`).then(response => {
             console.log(response);
         })
     }

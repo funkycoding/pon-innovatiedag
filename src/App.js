@@ -6,7 +6,7 @@ import LotLizzardService from './services/lotLizzardService';
 function App() {
 
   LotLizzardService.getParkingLots();
-  LotLizzardService.getParkingLot(3);
+  LotLizzardService.getParkingLot(1);
   LotLizzardService.getParkingSpaces(1);
   LotLizzardService.getParkingSpace(1,"1A1");
 
