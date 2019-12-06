@@ -21,10 +21,9 @@ const theme = createMuiTheme({
 
 function App() {
 
-  LotLizzardService.getParkingLots();
-  LotLizzardService.getParkingLot(1);
-  LotLizzardService.getParkingSpaces(1);
-  LotLizzardService.getParkingSpace(1,"1A1");
+  LotLizzardService.getParkingSpaces(1, [15, 15]).then(data => {
+    console.log(data);
+  })
 
   return (
     <ThemeProvider theme={theme}>
