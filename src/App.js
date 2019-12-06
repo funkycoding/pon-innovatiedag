@@ -1,8 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import LotLizzardService from './services/lotLizzardService';
 
 function App() {
+
+  LotLizzardService.getParkingLots();
+  LotLizzardService.getParkingLot(3);
+  LotLizzardService.getParkingSpaces(1);
+  LotLizzardService.getParkingSpace(1,"1A1");
+
   return (
     <div className="App">
       <header className="App-header">
