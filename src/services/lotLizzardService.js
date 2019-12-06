@@ -10,6 +10,24 @@ class LotLizzardService {
             console.log(response);
         })
     }
+
+    getParkingLot(id){
+        return this.httpService.request('/parking-lots/'+id).then(response => {
+            console.log(response);
+        })
+    }
+
+    getParkingSpaces(id){
+        return this.httpService.request('/parking-lots/'+id+"/spaces").then(response => {
+            console.log(response);
+        })
+    }
+
+    getParkingSpace(lot,space){
+        return this.httpService.request('/parking-lots/'+lot+"/spaces/"+space).then(response => {
+            console.log(response);
+        })
+    }
 }
 
 export default new LotLizzardService();
