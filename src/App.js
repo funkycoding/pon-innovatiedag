@@ -19,10 +19,10 @@ const theme = createMuiTheme({
 });
 
 function App() {
-  LotLizardService.getParkingLots();
-  LotLizardService.getParkingLot(1);
-  LotLizardService.getParkingSpaces(1);
-  LotLizardService.getParkingSpace(1, '1A1');
+
+  LotLizardService.getParkingSpaces(1, [15, 15]).then(data => {
+    console.log(data);
+  })
 
   return (
     <ThemeProvider theme={theme}>
