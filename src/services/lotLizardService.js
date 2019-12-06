@@ -1,33 +1,29 @@
 import BaseAxiosService  from './baseAxiosService';
 
-class LotLizzardService {
+class LotLizardService {
         constructor() {
         this.httpService = new BaseAxiosService('http://sandbox-parking-api.us-e2.cloudhub.io/api');
     }
 
-    getParkingLots() {
-        return this.httpService.request('/parking-lots').then(response => {
-            console.log(response);
-        })
+    async getParkingLots() {
+        return await this.httpService.request('/parking-lots').then(response => { return response.data; });
     }
 
     getParkingLot(id){
-        return this.httpService.request(`/parking-lots/${id}`).then(response => {
-            console.log(response);
-        })
+        return this.httpService.request(`/parking-lots/${id}`).then(response => { return response.data; })
     }
 
     getParkingSpaces(id){
         return this.httpService.request(`/parking-lots/${id}/spaces`).then(response => {
-            console.log(response);
+            return response.data;
         })
     }
 
     getParkingSpace(lot,space){
         return this.httpService.request(`/parking-lots/${lot}/spaces/${space}`).then(response => {
-            console.log(response);
+            return response.data;
         })
     }
 }
 
-export default new LotLizzardService();
+export default new LotLizardService();
